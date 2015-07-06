@@ -1,0 +1,39 @@
+#Rolling two dice
+
+#Sung Mo Koo   July 6, 2015
+
+#probability distribution function
+
+die <- 1:6
+dice <- sample (die, size=2, replace=TRUE)
+sum(dice)
+
+roll <- function() {
+  die <- 1:6
+  dice <- sample (die, size=2, replace=TRUE)
+  sum(dice)
+}
+
+hist(roll)
+hist(roll,freq=FALSE)
+
+#cumulative distribution function
+
+ecdf(roll)
+plot(ecdf(roll))
+
+#normal distribution fuction
+n <- rnorm(1000)
+
+#percentile of my height
+hist(rnorm(10000,mean=70,sd=5))
+Z = (68-70)/25 = -0.08 --> 0.398 = 39.8%
+dnorm(-0.08,mean=0,sd=1,log=FALSE)
+
+
+#Practice question for normal distribution
+  #X is a normal distribution with mean:3, sd:5^0.5
+1 - pnorm(1,mean=3,sd=5^0.5,lower.tail=TRUE,log.p=FALSE) = 1 - 0.1855 = 0.81
+
+
+
