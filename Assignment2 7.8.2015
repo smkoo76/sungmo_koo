@@ -1,0 +1,60 @@
+#Assignment 2  July, 8th, 2015  Sung Mo Koo
+
+#1.
+#a)
+mean(90,95,89,71,73,96,87,95,107,89,96,80,97,95,102,97,93,101,82,83,74,91,83,98,95,111,99,120,93,84)=90
+#b)
+Yes, there are enough number of samples taken, so the sample mean is an estimator for poplation mean.
+But it will probably not exactly be equal to the population mean. 
+#c)
+c(90,95,89,71,73,96,87,95,107,89,96,80,97,95,102,97,93,101,82,83,74,91,83,98,95,111,99,120,93,84)
+std <- function(x) sd(x)/sqrt(length(x))
+std(c(90,95,89,71,73,96,87,95,107,89,96,80,97,95,102,97,93,101,82,83,74,91,83,98,95,111,99,120,93,84))
+=1.976529
+#d)
+How much the sample mean can deviate from the population mean
+#e)
+qnorm(0.95)=1.645
+Range <- qnorm(0.95)*90/sqrt(30)
+Range=27.0277
+upper bound: mean+Range = 117.0277
+lower bound: mean-Range = 62.9723
+#f)
+One can be 95% certain that the population mean lies inbetween 117.0277 and 62.9723
+
+#2.
+Male=c(220.1,218.6,229.6,228.8,222.0,224.1,226.5)
+Female=c(223.4,221.5,230.2,224.3,223.8,230.8)
+t.test(Male,Female,alternative="two.sided",var.equal=TRUE)
+
+t=-0.62681   df=11    p-value=0.5436  
+
+At 95% confidence interval, p-value 0.5436 is greater than 0.05, so reject the alternative hypothesis.
+
+#3.
+#a)
+Wrong. The size of effect cannot be determined with p-value. 
+#b)
+Correct.
+#c)
+Wrong. Type I error is related to the value of alpha (0.05 in this case), which was set beforehand.
+#d)
+Wrong. p-value of 0.04 is based on the assumption that the null hypothesis is true, 
+but type II error is concerned with a situation which the alternative hypothesis is true.
+#e)
+The null hypothesis would not have been rejected.
+
+#4.
+personA=c(248,236,269,254,249,251,260,245,239,255)
+c(248,236,269,254,249,251,260,245,239,255)*1.5 
+newpersonA=c(372.0,354.0,403.5,381.0,373.5,376.5,390.0,367.5,358.5,382.5)
+personB=c(380,391,377,392,398,374)
+
+wilcox.test(newpersonA,personB,alternative="two.sided",var.equal=TRUE)
+
+W=16      p-value=0.1471
+The null hypothesis cannot be rejected.
+
+#5.
+Standard error measures how much sample mean is deviated from population mean, whereas
+standard deviation measures how data values are spread out.
